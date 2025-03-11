@@ -57,7 +57,7 @@ export default function Header() {
                       {label}
                     </span>
                     <span
-                      className={`absolute bottom-0 right-0 h-[3px] bg-gradient-to-l from-blue-500 to-teal-400 to-75% transition-all duration-200 ${pathname === href ? 'w-full' : 'w-0 group-hover:w-full'}`}
+                      className={`absolute bottom-0 right-0 h-[3px] bg-linear-to-l from-blue-500 to-teal-400 to-75% transition-all duration-200 ${pathname === href ? 'w-full' : 'w-0 group-hover:w-full'}`}
                     ></span>
                   </Link>
                 </li>

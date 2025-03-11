@@ -70,7 +70,7 @@ export default function Contact() {
             data-aos='zoom-y-out'
           >
             Have a question about{' '}
-            <span className='bg-gradient-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-transparent'>
+            <span className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-transparent'>
               Health Sync
             </span>
             ? Contact us directly

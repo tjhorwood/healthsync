@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
               className='mx-auto max-w-3xl text-center'
               data-aos='zoom-y-out'
             >
-              <h2 className='bg-gradient-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-3xl font-extrabold leading-tighter tracking-tighter text-transparent sm:text-4xl md:text-5xl'>
+              <h2 className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-3xl font-extrabold leading-tighter tracking-tighter text-transparent sm:text-4xl md:text-5xl'>
                 Privacy Policy
               </h2>
               <p className='mt-6 text-lg leading-8 text-gray-600'>
@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
               </p>
             </div>
             <div
-              className='mx-auto max-w-screen-xl space-y-6'
+              className='mx-auto max-w-(--breakpoint-xl) space-y-6'
               data-aos='zoom-y-out'
             >
               <p>
@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
                 {privacyPolcies.map((item, itemIdx) =>
                   !item.subpolicies ? (
                     <li key={itemIdx} className='flex items-center gap-x-3'>
-                      <span className='bg-gradient-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-xl font-semibold text-transparent'>
+                      <span className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-xl font-semibold text-transparent'>
                         {item.number}
                       </span>
                       <span className='w-full'>{item.name}</span>
@@ -42,7 +42,7 @@ export default function PrivacyPolicy() {
                   ) : (
                     <li key={itemIdx} className='flex flex-col space-y-6'>
                       <div className='flex flex-row items-center gap-x-3'>
-                        <span className='bg-gradient-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-xl font-semibold text-transparent'>
+                        <span className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-xl font-semibold text-transparent'>
                           {item.number}
                         </span>
                         <span className='w-full'>{item.name}</span>
@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
                             key={subitemIdx}
                             className='flex items-center gap-x-3'
                           >
-                            <span className='bg-gradient-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-xl font-semibold text-transparent'>
+                            <span className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-xl font-semibold text-transparent'>
                               {subitem.number}
                             </span>
                             <span className='w-full'>{subitem.name}</span>

@@ -66,7 +66,7 @@ export default function HeroHome() {
           data-aos='zoom-y-out'
           data-aos-delay='150'
         >
-          <div className='absolute inset-0 z-0 mx-auto h-[275px] w-[275px] rounded-full bg-gradient-to-bl from-blue-500/80 to-teal-400/80 to-75% sm:h-[400px] sm:w-[400px]'></div>
+          <div className='absolute inset-0 z-0 mx-auto h-[275px] w-[275px] rounded-full bg-linear-to-bl from-blue-500/80 to-teal-400/80 to-75% sm:h-[400px] sm:w-[400px]'></div>
           <Image
             src={Laptop}
             alt='laptop'

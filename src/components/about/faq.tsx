@@ -22,7 +22,7 @@ export default function FAQs() {
             'w-full border-none',
           )}
         >
-          <AccordionTrigger className='rounded-2xl bg-gradient-to-r from-teal-400 to-blue-500 px-4 text-left text-lg font-semibold text-white md:text-xl lg:px-6'>
+          <AccordionTrigger className='rounded-2xl bg-linear-to-r from-teal-400 to-blue-500 px-4 text-left text-lg font-semibold text-white md:text-xl lg:px-6'>
             {label}
           </AccordionTrigger>
           <AccordionContent className='px-6 pt-6 text-left md:text-lg'>
