@@ -32,7 +32,7 @@ const FeatureItem = ({
     >
       {icon}
     </div>
-    <div className='flex-grow rounded-lg bg-white p-4 shadow-md lg:text-center'>
+    <div className='grow rounded-lg bg-white p-4 shadow-md lg:text-center'>
       <h3 className='mb-3 text-lg font-bold lg:text-xl'>{title}</h3>
       <p className='text-gray-600'>{description}</p>
     </div>

@@ -15,7 +15,7 @@
   @apply text-2xl font-bold leading-snug tracking-tight;
 }
 
-@screen md {
+@media (width >= theme(--breakpoint-md)) {
   .h1 {
     @apply text-5xl;
   }

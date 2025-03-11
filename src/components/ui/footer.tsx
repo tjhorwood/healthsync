@@ -68,7 +68,7 @@ export default function Footer() {
           {/* Laptop Image */}
           <div className='sm:col-span-6 md:col-span-3 lg:col-span-3'>
             <div className='relative max-w-full'>
-              <div className='absolute inset-0 z-0 mx-auto h-0 w-0 rounded-full bg-gradient-to-bl from-blue-500/80 to-teal-400/80 to-75% md:h-[150px] md:w-[150px]' />
+              <div className='absolute inset-0 z-0 mx-auto h-0 w-0 rounded-full bg-linear-to-bl from-blue-500/80 to-teal-400/80 to-75% md:h-[150px] md:w-[150px]' />
               <Image
                 src={Laptop}
                 alt='laptop'

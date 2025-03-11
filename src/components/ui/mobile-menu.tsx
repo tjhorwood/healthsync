@@ -89,7 +89,7 @@ export default function MobileMenu({ navItems }: any) {
             <div className='mx-auto flex w-full flex-col items-center space-y-4 px-5 py-2'>
               <h2 className='text-2xl font-bold'>
                 Get the{' '}
-                <span className='bg-gradient-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-transparent'>
+                <span className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-transparent'>
                   App
                 </span>
               </h2>

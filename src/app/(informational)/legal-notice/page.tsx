@@ -10,12 +10,12 @@ export default function LegalNoticePage() {
               className='mx-auto max-w-3xl text-center'
               data-aos='zoom-y-out'
             >
-              <h2 className='h-14 bg-gradient-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-3xl font-extrabold leading-tighter tracking-tighter text-transparent sm:text-4xl md:h-20 md:text-5xl'>
+              <h2 className='h-14 bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-3xl font-extrabold leading-tighter tracking-tighter text-transparent sm:text-4xl md:h-20 md:text-5xl'>
                 Legal Notice
               </h2>
             </div>
             <div
-              className='mx-auto max-w-screen-xl space-y-6'
+              className='mx-auto max-w-(--breakpoint-xl) space-y-6'
               data-aos='zoom-y-out'
             >
               <p>
@@ -28,7 +28,7 @@ export default function LegalNoticePage() {
                 {legalNotices.map((item, itemIdx) => {
                   return (
                     <li key={itemIdx} className='flex items-center gap-x-3'>
-                      <span className='bg-gradient-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-xl font-semibold text-transparent'>
+                      <span className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-xl font-semibold text-transparent'>
                         {item.number}
                       </span>
                       <span className='w-full'>{item.name}</span>
