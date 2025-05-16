@@ -1,9 +1,4 @@
 /* Additional styles */
-@import './additional-styles/utility-patterns.css' layer(base);
-@import './additional-styles/range-slider.css' layer(base);
-@import './additional-styles/toggle-switch.css' layer(base);
-@import './additional-styles/theme.css' layer(base);
-
 @import 'tailwindcss';
 
 @config '../../tailwind.config.js';
