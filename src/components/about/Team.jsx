@@ -8,7 +8,7 @@ export default function Team() {
     <div className='bg-white py-10'>
       <div className='mx-auto px-2 text-center'>
         <h2
-          className='text-3xl font-bold leading-tighter tracking-tighter sm:text-4xl md:text-5xl'
+          className='leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'
           data-aos='zoom-y-out'
         >
           Meet The <GradientText>Team</GradientText>
@@ -26,7 +26,7 @@ export default function Team() {
                 height={224}
                 className='mx-auto scale-[1.1] rounded-full md:scale-[1.3]'
               />
-              <h3 className='mt-2 text-lg font-semibold leading-7 tracking-tight text-gray-900 md:text-xl'>
+              <h3 className='mt-2 text-lg leading-7 font-semibold tracking-tight text-gray-900 md:text-xl'>
                 {name}
               </h3>
               <p className='leading-6'>{role}</p>

@@ -36,7 +36,7 @@ export default function FAQs() {
   return (
     <section className='relative mx-auto px-2 text-center'>
       <div className='py-10 md:py-14' data-aos='zoom-y-out'>
-        <h2 className='text-3xl font-bold leading-tighter tracking-tighter sm:text-4xl md:text-5xl'>
+        <h2 className='leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
           Frequently Asked <GradientText>Questions</GradientText>
         </h2>
       </div>

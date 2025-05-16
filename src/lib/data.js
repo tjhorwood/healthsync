@@ -6,43 +6,6 @@ import ManStretching from '@/images/male-stretching.webp';
 import ManEating from '@/images/man-eating.webp';
 import Matt from '@/images/matt.webp';
 import Taylor from '@/images/taylor.webp';
-import { FaCheck, FaThumbsUp } from 'react-icons/fa';
-import { GiHealthIncrease, GiInspiration } from 'react-icons/gi';
-
-// Home - Features
-export const features = [
-  {
-    icon: <FaThumbsUp className='h-10 w-10 text-white lg:h-12 lg:w-12' />,
-    title: 'Simple to Use',
-    iconClassName: 'bg-emerald-400',
-    description:
-      'Simple to use interface which has fresh daily content everyday!',
-  },
-  {
-    icon: <FaCheck className='h-10 w-10 text-white lg:h-12 lg:w-12' />,
-    title: 'Health Insurance Approved',
-    description:
-      'Reimbursement approved fitness programs and integrated physicians to help guide your whole health journey',
-    iconClassName: 'bg-yellow-400',
-    containerClassName: 'animation-delay-500',
-  },
-  {
-    icon: <GiHealthIncrease className='h-10 w-10 text-white lg:h-12 lg:w-12' />,
-    title: 'Focus on Whole Health',
-    description:
-      'Bodyweight exercises, kettlebell, yoga, guided meditation, breathwork and more! All can be done from your home',
-    iconClassName: 'bg-sky-400',
-    containerClassName: 'animation-delay-1000',
-  },
-  {
-    icon: <GiInspiration className='h-10 w-10 text-white lg:h-12 lg:w-12' />,
-    title: 'Become an Inspiration',
-    description:
-      'A parent guide on how to incorporate well-being at home with children',
-    iconClassName: 'bg-pink-400',
-    containerClassName: 'animation-delay-1500',
-  },
-];
 
 // About - Team
 export const team = [

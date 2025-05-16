@@ -21,7 +21,7 @@ export default function HeroAbout() {
           priority={true}
         />
         <div className='relative z-10 mx-auto max-w-2xl space-y-6 px-8 text-center md:px-4'>
-          <h1 className='text-3xl font-bold leading-tighter tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl'>
+          <h1 className='leading-tighter text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl'>
             Our <GradientText>Team</GradientText>
           </h1>
           <p className='text-lg text-white md:text-xl'>
@@ -36,7 +36,7 @@ export default function HeroAbout() {
         data-aos-delay='200'
       >
         <div className='w-full md:w-1/2'>
-          <h2 className='text-3xl font-bold leading-tighter tracking-tighter sm:text-4xl md:text-5xl'>
+          <h2 className='leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
             Unveiling <GradientText>Wellness Excellence</GradientText>
           </h2>
           <Link href='/#features'>

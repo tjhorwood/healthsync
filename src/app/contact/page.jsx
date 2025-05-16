@@ -19,11 +19,13 @@ export default function Contact() {
   const [formData, setFormData] = useState(initialFormData);
   const [status, setStatus] = useState('');
 
-  const handleChange = (e) => { // Removed type annotation for e
+  const handleChange = (e) => {
+    // Removed type annotation for e
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e) => { // Removed type annotation for e
+  const handleSubmit = async (e) => {
+    // Removed type annotation for e
     e.preventDefault();
     setStatus('Sending...');
     await sleep(1000); // Simulate a delay
@@ -46,7 +48,8 @@ export default function Contact() {
       >
         {label} <span className='text-red-600'>*</span>
       </label>
-      {React.createElement(ComponentToRender, { // Use the new name
+      {React.createElement(ComponentToRender, {
+        // Use the new name
         id: name,
         name,
         type: ComponentToRender === Textarea ? undefined : type, // Textarea doesn't accept 'type' prop in the same way Input does
@@ -54,17 +57,19 @@ export default function Contact() {
         onChange: handleChange,
         required: true,
         placeholder: `Enter your ${name === 'subject' ? 'subject' : name}`,
-        ...(name === 'message' && ComponentToRender === Textarea ? { rows: 4 } : {}), // Ensure rows is only for Textarea
+        ...(name === 'message' && ComponentToRender === Textarea
+          ? { rows: 4 }
+          : {}), // Ensure rows is only for Textarea
       })}
     </div>
   );
 
   return (
     <section className='mx-auto max-w-6xl px-4 sm:px-6'>
-      <div className='pb-12 pt-32 md:pb-20 md:pt-40'>
+      <div className='pt-32 pb-12 md:pt-40 md:pb-20'>
         <div className='mx-auto max-w-3xl pb-12 text-center md:pb-16'>
           <h2
-            className='text-3xl font-extrabold leading-tighter tracking-tighter sm:text-4xl md:text-5xl'
+            className='leading-tighter text-3xl font-extrabold tracking-tighter sm:text-4xl md:text-5xl'
             data-aos='zoom-y-out'
           >
             Have a question about{' '}
@@ -99,7 +104,12 @@ export default function Contact() {
               <Button type='submit' size='lg' className='text-md h-12 w-full'>
                 Send
               </Button>
-              {status && <p className='mt-2 text-center text-sm text-gray-600'>{status}</p>} {/* Added conditional rendering and styling for status */}
+              {status && (
+                <p className='mt-2 text-center text-sm text-gray-600'>
+                  {status}
+                </p>
+              )}{' '}
+              {/* Added conditional rendering and styling for status */}
             </div>
           </div>
           <div className='mt-4 text-sm text-gray-600'>

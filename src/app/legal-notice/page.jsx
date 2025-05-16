@@ -11,12 +11,12 @@ export default function LegalNoticePage() {
     <>
       <section>
         <div className='mx-auto px-4 sm:px-6'>
-          <div className='space-y-6 pb-12 pt-32 md:pb-20 md:pt-40'>
+          <div className='space-y-6 pt-32 pb-12 md:pt-40 md:pb-20'>
             <div
               className='mx-auto max-w-3xl text-center'
               data-aos='zoom-y-out'
             >
-              <h2 className='h-14 bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-3xl font-extrabold leading-tighter tracking-tighter text-transparent sm:text-4xl md:h-20 md:text-5xl'>
+              <h2 className='leading-tighter h-14 bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-3xl font-extrabold tracking-tighter text-transparent sm:text-4xl md:h-20 md:text-5xl'>
                 Legal Notice
               </h2>
             </div>

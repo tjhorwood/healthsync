@@ -35,7 +35,7 @@ export default function NotFound() {
       </div>
 
       <div className='mx-auto max-w-6xl px-4 sm:px-6'>
-        <div className='pb-12 pt-32 md:pb-20 md:pt-40'>
+        <div className='pt-32 pb-12 md:pt-40 md:pb-20'>
           <div className='mx-auto max-w-3xl text-center'>
             {/* 404 content */}
             <h1 className='h1 mb-4'>Oh, No! You stumbled upon a rarity</h1>

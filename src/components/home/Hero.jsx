@@ -9,10 +9,10 @@ import Laptop from '@/images/laptop.webp';
 export default function HeroHome() {
   return (
     <section className='relative mx-auto w-full px-4 sm:px-6'>
-      <div className='flex flex-col space-y-8 pb-12 pt-32 md:pb-20 md:pt-40 lg:flex-row'>
+      <div className='flex flex-col space-y-8 pt-32 pb-12 md:pt-40 md:pb-20 lg:flex-row'>
         <div className='w-full'>
           <h1
-            className='text-3xl font-extrabold leading-tighter tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl'
+            className='leading-tighter text-3xl font-extrabold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl'
             data-aos='zoom-y-out'
           >
             Your New Holistic

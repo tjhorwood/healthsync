@@ -18,7 +18,7 @@ export default function Vision() {
         </div>
       </div>
       <div className='w-full space-y-8 md:w-1/2'>
-        <h2 className='text-3xl font-bold leading-tighter tracking-tighter sm:text-4xl md:text-5xl'>
+        <h2 className='leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
           Our <GradientText>Vision</GradientText>
         </h2>
         <p className='md:text-lg'>
