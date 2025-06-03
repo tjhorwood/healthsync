@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function LaptopVideo() {
   return (
     <div className='flex flex-col overflow-hidden' data-aos='zoom-y-out'>

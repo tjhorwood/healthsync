@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Button } from '@/components/ui/button';
 import GradientText from '@/components/GradientText';
+import { Button } from '@/components/ui/button';
 import backgroundImage from '@/images/about-bg.webp';
 
 export default function HeroAbout() {

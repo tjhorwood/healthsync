@@ -8,8 +8,8 @@ import { FaApple, FaWindows } from 'react-icons/fa';
 
 import Logo from '@/images/logo.webp';
 
-import { Button } from './ui/button';
 import MobileMenu from './MobileMenu';
+import { Button } from './ui/button';
 
 const navItems = [
   { href: '/', label: 'Home' },
