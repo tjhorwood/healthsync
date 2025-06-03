@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import { Button } from '@/components/ui/button';
 import GradientText from '@/components/GradientText';
+import { Button } from '@/components/ui/button';
 import { visionImageData } from '@/lib/data';
 
 export default function Vision() {

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 import GradientText from '@/components/GradientText';
 import Fitness from '@/images/fitness.webp';

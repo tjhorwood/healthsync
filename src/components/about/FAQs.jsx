@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 
+import GradientText from '@/components/GradientText';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import GradientText from '@/components/GradientText';
 import { faqData } from '@/lib/data';
 import { cn } from '@/lib/utils';
 
