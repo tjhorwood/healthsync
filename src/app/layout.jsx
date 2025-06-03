@@ -3,9 +3,9 @@ import '@/styles/globals.css';
 import { Poppins } from 'next/font/google';
 import Head from 'next/head';
 
+import { AOSInitializer } from '@/components/AOSInitializer';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import { AOSInitializer } from '@/components/AOSInitializer';
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700', '800', '900'],

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import React from 'react';
 
 import RevitalizeBG from '@/images/revitalize-bg.webp';
 import Tablet1 from '@/images/tablet-1.webp';
