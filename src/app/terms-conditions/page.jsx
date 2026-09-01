@@ -15,7 +15,7 @@ export default function TermsConditions() {
             {/* Section header */}
             <div
               className='mx-auto max-w-3xl text-center'
-              data-aos='zoom-y-out'
+              data-animate='fade-up'
             >
               <h2 className='leading-tighter bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-3xl font-extrabold tracking-tighter text-transparent sm:text-4xl md:text-5xl'>
                 Terms & Conditions
@@ -26,7 +26,7 @@ export default function TermsConditions() {
             </div>
             <div
               className='mx-auto max-w-(--breakpoint-xl) space-y-6'
-              data-aos='zoom-y-out'
+              data-animate='fade-up'
             >
               <p>
                 Thank you for choosing to use Health Sync's App. These Terms and

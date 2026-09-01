@@ -9,13 +9,13 @@ export default function Team() {
       <div className='mx-auto px-2 text-center'>
         <h2
           className='leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'
-          data-aos='zoom-y-out'
+          data-animate='fade-up'
         >
           Meet The <GradientText>Team</GradientText>
         </h2>
         <ul
           className='mx-auto mt-12 grid max-w-2xl grid-cols-2 gap-x-4 gap-y-16 md:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-4'
-          data-aos='zoom-y-out'
+          data-animate='fade-up'
         >
           {team.map(({ name, role, image }) => (
             <li key={name}>

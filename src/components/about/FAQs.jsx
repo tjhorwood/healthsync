@@ -35,7 +35,7 @@ export default function FAQs() {
 
   return (
     <section className='relative mx-auto px-2 text-center'>
-      <div className='py-10 md:py-14' data-aos='zoom-y-out'>
+      <div className='py-10 md:py-14' data-animate='fade-up'>
         <h2 className='leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>
           Frequently Asked <GradientText>Questions</GradientText>
         </h2>
@@ -44,7 +44,7 @@ export default function FAQs() {
         type='single'
         collapsible
         className='w-full space-y-6 lg:space-y-10'
-        data-aos='zoom-y-out'
+        data-animate='fade-up'
       >
         {renderedAccordionItems}
       </Accordion>

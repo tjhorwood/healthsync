@@ -1,7 +1,7 @@
-import GradientText from '@/components/GradientText';
-import { cn } from '@/lib/utils';
 import { FaCheck, FaThumbsUp } from 'react-icons/fa';
 import { GiHealthIncrease, GiInspiration } from 'react-icons/gi';
+import GradientText from '@/components/GradientText';
+import { cn } from '@/lib/utils';
 
 const features = [
   {

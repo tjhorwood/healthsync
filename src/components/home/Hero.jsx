@@ -13,7 +13,7 @@ export default function HeroHome() {
         <div className='w-full'>
           <h1
             className='leading-tighter text-3xl font-extrabold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl'
-            data-aos='zoom-y-out'
+            data-animate='fade-up'
           >
             Your New Holistic
             <br />
@@ -22,8 +22,8 @@ export default function HeroHome() {
           <div className='mt-6 max-w-3xl space-y-8'>
             <p
               className='text-gray-600 md:text-lg lg:text-xl'
-              data-aos='zoom-y-out'
-              data-aos-delay='150'
+              data-animate='fade-up'
+              data-animate-delay='150'
             >
               Health Sync™ an app crafted to elevate your productivity, enhance
               your focus, and support your overall well-being. Whether you are
@@ -33,8 +33,8 @@ export default function HeroHome() {
             </p>
             <div
               className='flex flex-col items-start gap-6'
-              data-aos='zoom-y-out'
-              data-aos-delay='150'
+              data-animate='fade-up'
+              data-animate-delay='150'
             >
               <Link href='/about'>
                 <Button
@@ -58,8 +58,8 @@ export default function HeroHome() {
 
         <div
           className='relative max-w-full'
-          data-aos='zoom-y-out'
-          data-aos-delay='150'
+          data-animate='fade-up'
+          data-animate-delay='150'
         >
           <div className='absolute inset-0 z-0 mx-auto h-[275px] w-[275px] rounded-full bg-linear-to-bl from-blue-500/80 to-teal-400/80 to-75% sm:h-[400px] sm:w-[400px]'></div>
           <Image
