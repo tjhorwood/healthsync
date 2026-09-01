@@ -17,9 +17,13 @@ const navItems = [
   { href: '/contact', label: 'Contact Us' },
 ];
 
+const normalizePath = (path) => path.replace(/\/+$/, '') || '/';
+
 export default function Header() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const isActive = (href) => normalizePath(pathname) === normalizePath(href);
 
   useEffect(() => {
     const scrollHandler = () => setIsScrolled(window.pageYOffset > 10);
@@ -49,15 +53,16 @@ export default function Header() {
                 <li key={href}>
                   <Link
                     href={href}
+                    aria-current={isActive(href) ? 'page' : undefined}
                     className='group relative flex items-center px-3 py-2 text-gray-800 transition duration-150 ease-in-out hover:text-teal-500 lg:px-5'
                   >
                     <span
-                      className={`relative z-10 ${pathname === href ? 'text-teal-500' : ''}`}
+                      className={`relative z-10 ${isActive(href) ? 'text-teal-500' : ''}`}
                     >
                       {label}
                     </span>
                     <span
-                      className={`absolute right-0 bottom-0 h-[3px] bg-linear-to-l from-blue-500 to-teal-400 to-75% transition-all duration-200 ${pathname === href ? 'w-full' : 'w-0 group-hover:w-full'}`}
+                      className={`absolute right-0 bottom-0 h-[3px] bg-linear-to-l from-blue-500 to-teal-400 to-75% transition-all duration-200 ${isActive(href) ? 'w-full' : 'w-0 group-hover:w-full'}`}
                     ></span>
                   </Link>
                 </li>

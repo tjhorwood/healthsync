@@ -2,13 +2,17 @@
 
 import { Transition } from '@headlessui/react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { FaApple, FaWindows } from 'react-icons/fa';
 import { MdClose, MdMenu } from 'react-icons/md';
 
 import { Button } from '@/components/ui/button';
 
+const normalizePath = (path) => path.replace(/\/+$/, '') || '/';
+
 export default function MobileMenu({ navItems }) {
+  const pathname = usePathname();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const trigger = useRef(null);
   const mobileNav = useRef(null);
@@ -77,7 +81,16 @@ export default function MobileMenu({ navItems }) {
                 <li key={itemIdx}>
                   <Link
                     href={item.href}
-                    className='flex text-lg text-gray-600 hover:text-teal-400'
+                    aria-current={
+                      normalizePath(pathname) === normalizePath(item.href)
+                        ? 'page'
+                        : undefined
+                    }
+                    className={`flex text-lg hover:text-teal-400 ${
+                      normalizePath(pathname) === normalizePath(item.href)
+                        ? 'font-semibold text-teal-500 underline underline-offset-4'
+                        : 'text-gray-600'
+                    }`}
                     onClick={() => setMobileNavOpen(false)}
                   >
                     {item.label}
