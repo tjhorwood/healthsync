@@ -1,28 +1,28 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  FaApple,
-  FaFacebook,
-  FaInstagram,
-  FaTwitter,
-  FaWindows,
-} from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
+import PlatformButtons from '@/components/PlatformButtons';
 import Laptop from '@/images/laptop.webp';
 import Logo from '@/images/logo.png';
 
-import { Button } from './ui/button';
-
-const usefulLinks = [
-  { href: '/', text: 'Home' },
-  { href: '/about', text: 'About us' },
-];
-
-const supportLinks = [
-  { href: '/contact', text: 'Contact us' },
-  { href: '/privacy', text: 'Privacy Policy' },
-  { href: '/terms-conditions', text: 'Terms & Conditions' },
-  { href: '/legal-notice', text: 'Legal Notice' },
+const linkSections = [
+  {
+    title: 'Useful Links',
+    links: [
+      { href: '/', text: 'Home' },
+      { href: '/about', text: 'About us' },
+    ],
+  },
+  {
+    title: 'Support',
+    links: [
+      { href: '/contact', text: 'Contact us' },
+      { href: '/privacy', text: 'Privacy Policy' },
+      { href: '/terms-conditions', text: 'Terms & Conditions' },
+      { href: '/legal-notice', text: 'Legal Notice' },
+    ],
+  },
 ];
 
 const socialLinks = [
@@ -50,18 +50,32 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Useful Links */}
-          <LinkSection title='Useful Links' links={usefulLinks} />
-
-          {/* Support Links */}
-          <LinkSection title='Support' links={supportLinks} />
+          {linkSections.map(({ title, links }) => (
+            <div
+              key={title}
+              className='sm:col-span-6 md:col-span-3 lg:col-span-2'
+            >
+              <h6 className='mb-2 font-medium text-gray-800'>{title}</h6>
+              <ul className='text-sm'>
+                {links.map(({ href, text }) => (
+                  <li key={href} className='mb-2'>
+                    <Link
+                      href={href}
+                      className='text-gray-600 transition duration-150 ease-in-out hover:text-gray-900'
+                    >
+                      {text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
           {/* Available On */}
           <div className='sm:col-span-6 md:col-span-3 lg:col-span-2'>
             <h6 className='mb-2 font-medium text-gray-800'>Available On</h6>
             <div className='space-y-2'>
-              <PlatformButton Icon={FaApple} text='MacOS' />
-              <PlatformButton Icon={FaWindows} text='Windows' />
+              <PlatformButtons className='w-1/2 sm:w-full md:w-11/12' />
             </div>
           </div>
 
@@ -99,34 +113,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
-}
-
-function LinkSection({ title, links }) {
-  return (
-    <div className='sm:col-span-6 md:col-span-3 lg:col-span-2'>
-      <h6 className='mb-2 font-medium text-gray-800'>{title}</h6>
-      <ul className='text-sm'>
-        {links.map(({ href, text }) => (
-          <li key={href} className='mb-2'>
-            <Link
-              href={href}
-              className='text-gray-600 transition duration-150 ease-in-out hover:text-gray-900'
-            >
-              {text}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-function PlatformButton({ Icon, text }) {
-  return (
-    <Button size='lg' className='w-1/2 space-x-2 sm:w-full md:w-11/12'>
-      <Icon className='h-5 w-5' />
-      <span>{text}</span>
-    </Button>
   );
 }

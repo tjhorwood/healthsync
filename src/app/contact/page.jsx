@@ -1,7 +1,8 @@
 'use client';
 import Link from 'next/link';
-import React, { useState } from 'react'; // Removed ChangeEvent, FormEvent
+import { useState } from 'react';
 
+import GradientText from '@/components/GradientText';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -15,54 +16,64 @@ const initialFormData = {
   message: '',
 };
 
-export default function Contact() {
-  const [formData, setFormData] = useState(initialFormData);
-  const [status, setStatus] = useState('');
+const nameRow = [
+  { name: 'firstname', label: 'First Name' },
+  { name: 'lastname', label: 'Last Name' },
+];
 
-  const handleChange = (e) => {
-    // Removed type annotation for e
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
+const singleRows = [
+  { name: 'email', label: 'Email', type: 'email' },
+  { name: 'subject', label: 'Subject' },
+  { name: 'message', label: 'Message', multiline: true },
+];
 
-  const handleSubmit = async (e) => {
-    // Removed type annotation for e
-    e.preventDefault();
-    setStatus('Sending...');
-    await sleep(1000); // Simulate a delay
-    setStatus('Message sent successfully!');
-    setFormData(initialFormData);
-  };
-
-  const renderField = (
-    name,
-    label,
-    type = 'text',
-    ComponentToRender = Input, // Renamed 'as' to avoid conflict with JSX 'as' prop if ever used, and removed 'any' type
-  ) => (
-    <div
-      className={`w-full px-3 ${['firstname', 'lastname'].includes(name) ? 'md:w-1/2' : ''}`}
-    >
+function Field({
+  name,
+  label,
+  type = 'text',
+  multiline,
+  half,
+  value,
+  onChange,
+}) {
+  const Control = multiline ? Textarea : Input;
+  return (
+    <div className={`w-full px-3 ${half ? 'md:w-1/2' : ''}`}>
       <label
         className='mb-1 block text-sm font-medium text-gray-800'
         htmlFor={name}
       >
         {label} <span className='text-red-600'>*</span>
       </label>
-      {React.createElement(ComponentToRender, {
-        // Use the new name
-        id: name,
-        name,
-        type: ComponentToRender === Textarea ? undefined : type, // Textarea doesn't accept 'type' prop in the same way Input does
-        value: formData[name], // Removed 'as keyof typeof formData'
-        onChange: handleChange,
-        required: true,
-        placeholder: `Enter your ${name === 'subject' ? 'subject' : name}`,
-        ...(name === 'message' && ComponentToRender === Textarea
-          ? { rows: 4 }
-          : {}), // Ensure rows is only for Textarea
-      })}
+      <Control
+        id={name}
+        name={name}
+        type={multiline ? undefined : type}
+        rows={multiline ? 4 : undefined}
+        value={value}
+        onChange={onChange}
+        required
+        placeholder={`Enter your ${name}`}
+      />
     </div>
   );
+}
+
+export default function Contact() {
+  const [formData, setFormData] = useState(initialFormData);
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+    await sleep(1000); // Simulate a delay
+    setStatus('Message sent successfully!');
+    setFormData(initialFormData);
+  };
 
   return (
     <section className='mx-auto max-w-6xl px-4 sm:px-6'>
@@ -72,11 +83,8 @@ export default function Contact() {
             className='leading-tighter text-3xl font-extrabold tracking-tighter sm:text-4xl md:text-5xl'
             data-animate='fade-up'
           >
-            Have a question about{' '}
-            <span className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-transparent'>
-              Health Sync
-            </span>
-            ? Contact us directly
+            Have a question about <GradientText>Health Sync</GradientText>?
+            Contact us directly
           </h2>
         </div>
 
@@ -87,18 +95,25 @@ export default function Contact() {
           onSubmit={handleSubmit}
         >
           <div className='-mx-3 flex flex-wrap space-y-4 md:space-y-0'>
-            {renderField('firstname', 'First Name')}
-            {renderField('lastname', 'Last Name')}
+            {nameRow.map((field) => (
+              <Field
+                key={field.name}
+                {...field}
+                half
+                value={formData[field.name]}
+                onChange={handleChange}
+              />
+            ))}
           </div>
-          <div className='-mx-3 flex flex-wrap'>
-            {renderField('email', 'Email', 'email')}
-          </div>
-          <div className='-mx-3 flex flex-wrap'>
-            {renderField('subject', 'Subject')}
-          </div>
-          <div className='-mx-3 flex flex-wrap'>
-            {renderField('message', 'Message', 'text', Textarea)}
-          </div>
+          {singleRows.map((field) => (
+            <div key={field.name} className='-mx-3 flex flex-wrap'>
+              <Field
+                {...field}
+                value={formData[field.name]}
+                onChange={handleChange}
+              />
+            </div>
+          ))}
           <div className='-mx-3 flex flex-wrap'>
             <div className='w-full px-3'>
               <Button type='submit' size='lg' className='text-md h-12 w-full'>
@@ -108,8 +123,7 @@ export default function Contact() {
                 <p className='mt-2 text-center text-sm text-gray-600'>
                   {status}
                 </p>
-              )}{' '}
-              {/* Added conditional rendering and styling for status */}
+              )}
             </div>
           </div>
           <div className='mt-4 text-sm text-gray-600'>

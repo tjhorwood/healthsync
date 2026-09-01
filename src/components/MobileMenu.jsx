@@ -4,18 +4,19 @@ import { Transition } from '@headlessui/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import { FaApple, FaWindows } from 'react-icons/fa';
 import { MdClose, MdMenu } from 'react-icons/md';
 
-import { Button } from '@/components/ui/button';
-
-const normalizePath = (path) => path.replace(/\/+$/, '') || '/';
+import GradientText from '@/components/GradientText';
+import PlatformButtons from '@/components/PlatformButtons';
+import { normalizePath } from '@/lib/utils';
 
 export default function MobileMenu({ navItems }) {
   const pathname = usePathname();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const trigger = useRef(null);
   const mobileNav = useRef(null);
+
+  const isActive = (href) => normalizePath(pathname) === normalizePath(href);
 
   // close the mobile menu on click outside
   useEffect(() => {
@@ -77,17 +78,13 @@ export default function MobileMenu({ navItems }) {
         >
           <div className='flex flex-col space-y-4'>
             <ul className='space-y-4 px-5 py-2 font-medium'>
-              {navItems.map((item, itemIdx) => (
-                <li key={itemIdx}>
+              {navItems.map((item) => (
+                <li key={item.href}>
                   <Link
                     href={item.href}
-                    aria-current={
-                      normalizePath(pathname) === normalizePath(item.href)
-                        ? 'page'
-                        : undefined
-                    }
+                    aria-current={isActive(item.href) ? 'page' : undefined}
                     className={`flex text-lg hover:text-teal-400 ${
-                      normalizePath(pathname) === normalizePath(item.href)
+                      isActive(item.href)
                         ? 'font-semibold text-teal-500 underline underline-offset-4'
                         : 'text-gray-600'
                     }`}
@@ -100,26 +97,10 @@ export default function MobileMenu({ navItems }) {
             </ul>
             <div className='mx-auto flex w-full flex-col items-center space-y-4 px-5 py-2'>
               <h2 className='text-2xl font-bold'>
-                Get the{' '}
-                <span className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-transparent'>
-                  App
-                </span>
+                Get the <GradientText>App</GradientText>
               </h2>
               <div className='flex grow flex-wrap items-center justify-center gap-4'>
-                <Button
-                  size='lg'
-                  className='space-x-2 transition duration-300 hover:scale-[1.15]'
-                >
-                  <FaApple className='h-5 w-5' />
-                  <span>MacOS</span>
-                </Button>
-                <Button
-                  size='lg'
-                  className='space-x-2 transition-all duration-300 hover:scale-[1.15]'
-                >
-                  <FaWindows className='h-5 w-5' />
-                  <span>Windows</span>
-                </Button>
+                <PlatformButtons className='transition duration-300 hover:scale-[1.15]' />
               </div>
             </div>
           </div>
