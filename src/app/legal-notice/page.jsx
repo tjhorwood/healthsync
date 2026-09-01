@@ -14,7 +14,7 @@ export default function LegalNoticePage() {
           <div className='space-y-6 pt-32 pb-12 md:pt-40 md:pb-20'>
             <div
               className='mx-auto max-w-3xl text-center'
-              data-aos='zoom-y-out'
+              data-animate='fade-up'
             >
               <h2 className='leading-tighter h-14 bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-3xl font-extrabold tracking-tighter text-transparent sm:text-4xl md:h-20 md:text-5xl'>
                 Legal Notice
@@ -22,7 +22,7 @@ export default function LegalNoticePage() {
             </div>
             <div
               className='mx-auto max-w-(--breakpoint-xl) space-y-6'
-              data-aos='zoom-y-out'
+              data-animate='fade-up'
             >
               <p>
                 This Legal Notice ("Notice") governs your use of Health Sync

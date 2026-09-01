@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export', // Ensures static HTML is generated
-  trailingSlash: true, // Optional: Adds trailing slashes to URLs for better Netlify compatibility
-  images: { unoptimized: true }, // Optional: Optimizes images
+  output: 'export', // Emit a fully static site into ./out for Cloudflare Pages
+  trailingSlash: true, // Emit dir/index.html so routes resolve on static hosts
+  images: { unoptimized: true }, // Required: no image optimization server on Pages
 };
 
 module.exports = nextConfig;

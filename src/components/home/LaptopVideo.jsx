@@ -1,6 +1,6 @@
 export default function LaptopVideo() {
   return (
-    <div className='flex flex-col overflow-hidden' data-aos='zoom-y-out'>
+    <div className='flex flex-col overflow-hidden' data-animate='fade-up'>
       <video
         autoPlay
         loop

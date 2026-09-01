@@ -8,7 +8,7 @@ export default function Vision() {
   return (
     <div
       className='mx-auto flex flex-col items-center justify-between gap-4 md:flex-row md:gap-14'
-      data-aos='zoom-y-out'
+      data-animate='fade-up'
     >
       <div className='mb-8 w-full md:mb-0 md:w-1/2'>
         <div className='relative'>

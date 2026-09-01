@@ -10,15 +10,15 @@ export default function HeroAbout() {
     <>
       <div
         className='relative flex min-h-[350px] items-center justify-center rounded-xl bg-cover bg-center shadow-lg md:min-h-[500px]'
-        data-aos='zoom-y-out'
+        data-animate='fade-up'
       >
         <Image
           src={backgroundImage}
-          alt='Background'
-          layout='fill'
-          objectFit='cover'
-          className='rounded-xl'
-          priority={true}
+          alt=''
+          fill
+          sizes='(min-width: 1536px) 1536px, 100vw'
+          className='rounded-xl object-cover'
+          priority
         />
         <div className='relative z-10 mx-auto max-w-2xl space-y-6 px-8 text-center md:px-4'>
           <h1 className='leading-tighter text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl'>
@@ -32,8 +32,8 @@ export default function HeroAbout() {
       </div>
       <div
         className='mx-auto flex flex-col gap-8 md:flex-row md:gap-4'
-        data-aos='zoom-y-out'
-        data-aos-delay='200'
+        data-animate='fade-up'
+        data-animate-delay='200'
       >
         <div className='w-full md:w-1/2'>
           <h2 className='leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl'>

@@ -107,3 +107,32 @@ build/**
 dist/**
 .next/**
 /.next/
+
+# typescript
+*.tsbuildinfo
+
+# lockfiles — this project uses pnpm
+package-lock.json
+yarn.lock
+
+# AI assistants & coding agents
+# Next.js regenerates AGENTS.md / CLAUDE.md on every dev/build run
+AGENTS.md
+CLAUDE.md
+CLAUDE.local.md
+GEMINI.md
+.claude/
+.cursor/
+.cursorrules
+.cursorignore
+.cursorindexingignore
+.aider*
+.windsurf/
+.windsurfrules
+.continue/
+.clinerules/
+.roo/
+.codeium/
+.gemini/
+.aiexclude
+.github/copilot-instructions.md

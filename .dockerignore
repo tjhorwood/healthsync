@@ -1,7 +1,41 @@
+.git
+.github
+node_modules
+.next
+out
+build
+dist
+coverage
+.turbo
+
+# tooling / editor
+.vscode
+.idea
+*.log
+npm-debug.log*
+.DS_Store
+
+# AI assistants & coding agents (not needed to build the site)
+AGENTS.md
+CLAUDE.md
+CLAUDE.local.md
+GEMINI.md
+.claude
+.cursor
+.cursorrules
+.aider*
+.windsurf
+.windsurfrules
+.continue
+.clinerules
+.roo
+.codeium
+.gemini
+
+# not needed in the build context
 Dockerfile
 .dockerignore
-node_modules
-npm-debug.log
+docker-compose.yml
 README.md
-.next
-.git
+.env
+.env.*

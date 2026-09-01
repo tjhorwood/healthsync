@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
             {/* Section header */}
             <div
               className='mx-auto max-w-3xl text-center'
-              data-aos='zoom-y-out'
+              data-animate='fade-up'
             >
               <h2 className='leading-tighter bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-3xl font-extrabold tracking-tighter text-transparent sm:text-4xl md:text-5xl'>
                 Privacy Policy
@@ -26,7 +26,7 @@ export default function PrivacyPolicy() {
             </div>
             <div
               className='mx-auto max-w-(--breakpoint-xl) space-y-6'
-              data-aos='zoom-y-out'
+              data-animate='fade-up'
             >
               <p>
                 Thank you for using Health Sync’s app. This Privacy Policy

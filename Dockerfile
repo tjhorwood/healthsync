@@ -1,49 +1,29 @@
-FROM node:22-alpine AS base
+# syntax=docker/dockerfile:1
 
-FROM base AS deps
-RUN apk add --no-cache libc6-compat
+# ---- Build the static export (Next.js `output: 'export'` -> ./out) ----
+FROM node:24-alpine AS builder
 WORKDIR /app
 
-COPY package.json yarn.lock* ./
-RUN \
-  if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
-  elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
+# pnpm comes from corepack; the exact version is pinned by
+# package.json "packageManager".
+RUN corepack enable
 
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+# Install dependencies first so this layer is cached unless the lockfile moves.
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
+
+# Build the site.
 COPY . .
+RUN pnpm build
 
-RUN \
-  if [ -f yarn.lock ]; then yarn run build; \
-  elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
-  else echo "Lockfile not found." && exit 1; \
-  fi
+# ---- Serve the static files with nginx (unprivileged / non-root) ----
+FROM nginxinc/nginx-unprivileged:1.27-alpine AS runner
 
-FROM base AS runner
-WORKDIR /app
+COPY --from=builder /app/out /usr/share/nginx/html
+COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 
-ENV NODE_ENV=production
+# The unprivileged image runs as UID 101 and cannot bind to :80.
+EXPOSE 8080
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-COPY --from=builder /app/public ./public
-
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
-
-EXPOSE 3030
-
-ENV PORT=3030
-
-# set hostname to localhost
-ENV HOSTNAME="0.0.0.0"
-
-CMD ["node", "server.js"]
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD ["wget", "-q", "-O", "-", "http://127.0.0.1:8080/healthz"]

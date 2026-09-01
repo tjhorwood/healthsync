@@ -25,6 +25,18 @@
   direction: rtl;
 }
 
+/*
+  Reveal-on-scroll initial state (see components/ScrollAnimations.jsx).
+  Scoped to `html.js-anim`, which that component adds on mount, so the page
+  stays fully visible when JS is unavailable. Skipped for reduced-motion.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  .js-anim [data-animate] {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

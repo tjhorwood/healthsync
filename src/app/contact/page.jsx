@@ -70,7 +70,7 @@ export default function Contact() {
         <div className='mx-auto max-w-3xl pb-12 text-center md:pb-16'>
           <h2
             className='leading-tighter text-3xl font-extrabold tracking-tighter sm:text-4xl md:text-5xl'
-            data-aos='zoom-y-out'
+            data-animate='fade-up'
           >
             Have a question about{' '}
             <span className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-transparent'>
@@ -82,8 +82,8 @@ export default function Contact() {
 
         <form
           className='mx-auto max-w-xl space-y-4'
-          data-aos='zoom-y-out'
-          data-aos-delay='150'
+          data-animate='fade-up'
+          data-animate-delay='150'
           onSubmit={handleSubmit}
         >
           <div className='-mx-3 flex flex-wrap space-y-4 md:space-y-0'>
