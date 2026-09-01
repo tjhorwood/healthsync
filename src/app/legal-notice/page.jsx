@@ -1,3 +1,4 @@
+import LegalDocument from '@/components/legal/LegalDocument';
 import { legalNotices } from '@/lib/data';
 
 export const metadata = {
@@ -8,48 +9,21 @@ export const metadata = {
 
 export default function LegalNoticePage() {
   return (
-    <>
-      <section>
-        <div className='mx-auto px-4 sm:px-6'>
-          <div className='space-y-6 pt-32 pb-12 md:pt-40 md:pb-20'>
-            <div
-              className='mx-auto max-w-3xl text-center'
-              data-animate='fade-up'
-            >
-              <h2 className='leading-tighter h-14 bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-3xl font-extrabold tracking-tighter text-transparent sm:text-4xl md:h-20 md:text-5xl'>
-                Legal Notice
-              </h2>
-            </div>
-            <div
-              className='mx-auto max-w-(--breakpoint-xl) space-y-6'
-              data-animate='fade-up'
-            >
-              <p>
-                This Legal Notice ("Notice") governs your use of Health Sync
-                App. By accessing or using the App, you agree to be bound by
-                this Notice. If you do not agree to this Notice, please refrain
-                from using the App.
-              </p>
-              <ul role='list' className='ml-6 space-y-6'>
-                {legalNotices.map((item, itemIdx) => {
-                  return (
-                    <li key={itemIdx} className='flex items-center gap-x-3'>
-                      <span className='bg-linear-to-l from-blue-500 to-teal-400 to-75% bg-clip-text text-xl font-semibold text-transparent'>
-                        {item.number}
-                      </span>
-                      <span className='w-full'>{item.name}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-              <p>
-                By using the App, you acknowledge that you have read,
-                understood, and agreed to this Legal Notice.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+    <LegalDocument
+      title='Legal Notice'
+      items={legalNotices}
+      intro={
+        <p>
+          This Legal Notice ("Notice") governs your use of Health Sync App. By
+          accessing or using the App, you agree to be bound by this Notice. If
+          you do not agree to this Notice, please refrain from using the App.
+        </p>
+      }
+    >
+      <p>
+        By using the App, you acknowledge that you have read, understood, and
+        agreed to this Legal Notice.
+      </p>
+    </LegalDocument>
   );
 }

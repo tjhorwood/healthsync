@@ -4,20 +4,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { FaApple, FaWindows } from 'react-icons/fa';
 
 import Logo from '@/images/logo.webp';
+import { normalizePath } from '@/lib/utils';
 
 import MobileMenu from './MobileMenu';
-import { Button } from './ui/button';
+import PlatformButtons from './PlatformButtons';
 
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact Us' },
 ];
-
-const normalizePath = (path) => path.replace(/\/+$/, '') || '/';
 
 export default function Header() {
   const pathname = usePathname();
@@ -69,20 +67,7 @@ export default function Header() {
               ))}
             </ul>
             <div className='flex grow flex-wrap items-center justify-end gap-4'>
-              {['MacOS', 'Windows'].map((os) => (
-                <Button
-                  key={os}
-                  size='lg'
-                  className='space-x-2 transition duration-300 hover:scale-[1.15]'
-                >
-                  {os === 'MacOS' ? (
-                    <FaApple className='h-5 w-5' />
-                  ) : (
-                    <FaWindows className='h-5 w-5' />
-                  )}
-                  <span>{os}</span>
-                </Button>
-              ))}
+              <PlatformButtons className='transition duration-300 hover:scale-[1.15]' />
             </div>
           </nav>
 

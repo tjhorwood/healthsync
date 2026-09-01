@@ -78,11 +78,11 @@ export const faqData = [
 ];
 
 // Privacy Policy
-export const privacyPolcies = [
+export const privacyPolicies = [
   {
     number: '1',
     name: 'Information We Collect We only collect the following information from you:',
-    subpolicies: [
+    children: [
       {
         number: '1.1',
         name: 'Email and Username When you sign up for an account on the App, we collect your email address and chosen username. This information is necessary for us to create and manage your account. We do not collect any other personally identifiable information about you. Unless provided in your account portal.',
@@ -92,7 +92,7 @@ export const privacyPolcies = [
   {
     number: '2',
     name: 'Use of Collected Information We use the collected information for the following purposes:',
-    subpolicies: [
+    children: [
       {
         number: '2.1',
         name: "Account Management We use your email address and username to create and manage your account, provide you with access to the App's features and services, and communicate with you regarding your account.",
@@ -110,7 +110,7 @@ export const privacyPolcies = [
   {
     number: '3',
     name: 'Disclosure of Information We do not sell, trade, or rent your personal information to third parties. However, we may disclose your information in the following circumstances:',
-    subpolicies: [
+    children: [
       {
         number: '3.1',
         name: 'Service Providers We may engage trusted third-party service providers to perform certain functions on our behalf, such as hosting the App, processing payments, or providing customer support. These service providers may have access to your information only to the extent necessary to perform their tasks and are obligated not to disclose or use it for any other purpose.',
@@ -148,7 +148,7 @@ export const termsConditions = [
   {
     number: '1',
     name: 'Account Creation and Usage',
-    subterms: [
+    children: [
       {
         number: '1.1',
         name: 'Account Registration To use the App, you may be required to create an account. When creating an account, you agree to provide accurate, current, and complete information. You are responsible for maintaining the confidentiality of your account credentials and are solely responsible for all activities that occur under your account. If you believe your account has been compromised, please notify us immediately at admin@health-sync.org',
@@ -162,7 +162,7 @@ export const termsConditions = [
   {
     number: '2',
     name: 'Intellectual Property Rights',
-    subterms: [
+    children: [
       {
         number: '2.1',
         name: 'Ownership The App and its content, including but not limited to text, graphics, images, logos, icons, audio clips, video clips, data compilations, and software, are owned by Health Sync or its licensors and are protected by intellectual property laws.',
